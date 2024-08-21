@@ -1,10 +1,6 @@
 ﻿using BrailleNet.Core.DataStructure;
 using BrailleNet.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BrailleNet.Core.Implementations.Converters
 {
@@ -31,7 +27,7 @@ namespace BrailleNet.Core.Implementations.Converters
                 if (text[i] != ' ')
                 {
                     var braille = characters.SingleOrDefault(x => x.Character == text[i]);
-                    sb.Append(braille != null ? braille.ToString() : "?");
+                    sb.Append(braille != null ? braille.BrailleCharacter.ToString() : "?");
                 }
                 else
                 {
