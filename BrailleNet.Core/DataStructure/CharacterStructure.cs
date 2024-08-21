@@ -8,7 +8,7 @@ namespace BrailleNet.Core.DataStructure
 {
     public class CharacterStructure
     {
-        public string? Character { get; set; }
-        public string? BrailleCharacter { get; set; }
+        public char Character { get; set; }
+        public char BrailleCharacter { get; set; }
     }
 }

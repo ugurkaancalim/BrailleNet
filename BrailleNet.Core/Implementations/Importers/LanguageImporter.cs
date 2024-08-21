@@ -6,10 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrailleNet.Core.Implementations
+namespace BrailleNet.Core.Implementations.Importers
 {
     public class LanguageImporter : ILanguageImporter
     {
+        /// <summary>
+        /// This method takes a path of language file and returns characterset of language
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public List<CharacterStructure> Import(string path)
         {
             var text = File.ReadAllText(path);
@@ -20,8 +25,8 @@ namespace BrailleNet.Core.Implementations
                 var data = character.Split('$');
                 result.Add(new CharacterStructure()
                 {
-                    Character = data[0],
-                    BrailleCharacter = data[1]
+                    Character = data[0].ToLower()[0],
+                    BrailleCharacter = data[1][0]
                 });
             }
             return result;
