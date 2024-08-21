@@ -1,3 +1,4 @@
+using BrailleNet.Core.Interfaces;
 using BrailleNet.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,9 +9,10 @@ namespace BrailleNet.WebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ITextTranslator textTranslator)
         {
             _logger = logger;
+            var response = textTranslator.Translate(@"C:\Users\ugurc\OneDrive\Masaüstü\deneme.txt");
         }
 
         public IActionResult Index()
