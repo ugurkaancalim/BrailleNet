@@ -1,9 +1,4 @@
 ﻿using BrailleNet.Readers.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrailleNet.Readers.Strategies
 {
@@ -14,7 +9,7 @@ namespace BrailleNet.Readers.Strategies
             throw new NotImplementedException();
         }
 
-        public string? Readline()
+        public string? ReadLine()
         {
             throw new NotImplementedException();
         }

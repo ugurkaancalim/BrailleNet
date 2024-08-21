@@ -1,22 +1,63 @@
 ﻿using BrailleNet.Readers.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrailleNet.Readers.Strategies
 {
-    public class TxtReadStrategy : IReaderStrategy
+    public class TxtReadStrategy : IReaderStrategy, IDisposable
     {
+        private StreamReader? _fileReader;
+        private bool _disposed = false;
+
         public bool Load(string filePath)
         {
-            throw new NotImplementedException();
+            if (_disposed)
+            {
+                throw new ObjectDisposedException(nameof(TxtReadStrategy));
+            }
+
+            DisposeStreamReader();
+
+            _fileReader = new StreamReader(filePath);
+            return true;
+
+        }
+        private void DisposeStreamReader()
+        {
+            _fileReader?.Dispose();
+            _fileReader = null;
+        }
+        public string? ReadLine()
+        {
+            if (_disposed)
+            {
+                throw new ObjectDisposedException(nameof(TxtReadStrategy));
+            }
+
+            return _fileReader?.ReadLine();
         }
 
-        public string? Readline()
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _fileReader?.Dispose();
+                }
+
+                _disposed = true;
+            }
+        }
+
+        ~TxtReadStrategy()
+        {
+            Dispose(false);
         }
     }
+
 }

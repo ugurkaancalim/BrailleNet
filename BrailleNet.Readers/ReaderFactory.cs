@@ -2,7 +2,7 @@
 using BrailleNet.Readers.Strategies;
 namespace BrailleNet.Readers
 {
-    public class ReaderFactory
+    public static class ReaderFactory
     {
 
         public static IReaderStrategy CreateStrategy(string extension)
