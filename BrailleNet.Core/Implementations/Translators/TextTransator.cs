@@ -14,13 +14,14 @@ namespace BrailleNet.Core.Implementations.Translators
         {
             _textConverter = textConverter;
             _languageImporter = languageImporter;
-            _textConverter.LoadLanguagePack(@"C:\Users\ugurc\source\repos\BrailleNet\BrailleNet.WebApp\wwwroot\LanguagePacks\tr.bnet");
+            _textConverter.LoadLanguagePack(@"C:\Users\ugurc\source\repos\BrailleNet\BrailleNet.WebApp\wwwroot\language-packs\tr.bnet");//TODO get languagecode from user.
         }
         public bool Translate(string filePath, string newFilePath, FileFormat fileFormat)
         {
             var extension = Path.GetExtension(filePath);
             var readerStrategy = ReaderFactory.CreateStrategy(extension);
             readerStrategy.Load(filePath);
+        
             // Create a StreamWriter instance
             using (StreamWriter writer = new StreamWriter(newFilePath + fileFormat.ToExtensionString()))
             {

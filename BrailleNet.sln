@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrailleNet.WebApp", "Braill
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrailleNet.Core", "BrailleNet.Core\BrailleNet.Core.csproj", "{CF1B41AF-675A-4599-A37C-92404BC49075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrailleNet.Readers", "BrailleNet.Readers\BrailleNet.Readers.csproj", "{5DB2C962-C11A-4C75-9E22-8C26B0CD3893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrailleNet.Readers", "BrailleNet.Readers\BrailleNet.Readers.csproj", "{5DB2C962-C11A-4C75-9E22-8C26B0CD3893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrailleNet.WebAPI", "BrailleNet.WebAPI\BrailleNet.WebAPI.csproj", "{CF22E76A-932E-4A1E-B39C-394681818681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5DB2C962-C11A-4C75-9E22-8C26B0CD3893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DB2C962-C11A-4C75-9E22-8C26B0CD3893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DB2C962-C11A-4C75-9E22-8C26B0CD3893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF22E76A-932E-4A1E-B39C-394681818681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF22E76A-932E-4A1E-B39C-394681818681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF22E76A-932E-4A1E-B39C-394681818681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF22E76A-932E-4A1E-B39C-394681818681}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
